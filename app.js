@@ -35,7 +35,7 @@ var page = function( req, res, state ) {
             client.get( machine, 
                 function(data, response_raw){
                     console.log(data);
-                    jsdata = JSON.parse(data)
+                    var jsdata = JSON.parse(data)
                     for(var key in jsdata) {
                         console.log( "key:" + key + ", value:" + jsdata[key] );
                     }                   
@@ -58,7 +58,7 @@ var order = function(req, res) {
             var count = 0;
             client.get( machine, 
                 function(data, response_raw) {
-                    jsdata = JSON.parse(data)
+                    var jsdata = JSON.parse(data)
                     count = jsdata.CountGumballs ;
                     console.log( "count before = " + count ) ;
                     if ( count > 0 )
